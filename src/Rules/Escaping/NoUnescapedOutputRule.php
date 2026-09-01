@@ -3,6 +3,7 @@
 namespace Mousr\TemplatesPhpstanRules\Rules\Escaping;
 
 use Mousr\Templates\Escaper;
+use Mousr\TemplatesPhpstanRules\TemplateFileFilter;
 use Override;
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;
@@ -13,9 +14,8 @@ use PHPStan\Rules\RuleErrorBuilder;
 use PHPStan\Type\ObjectType;
 
 /** @implements Rule<Echo_> */
-class NoUnescapedOutputRule implements Rule {
-    /** @param list<string> $templateExtensions */
-    public function __construct(private array $templateExtensions) {}
+final readonly class NoUnescapedOutputRule implements Rule {
+    public function __construct(private TemplateFileFilter $templateFileFilter) {}
 
     #[Override]
     public function getNodeType(): string {
@@ -24,14 +24,7 @@ class NoUnescapedOutputRule implements Rule {
 
     #[Override]
     public function processNode(Node $node, Scope $scope): array {
-        $extension = $scope->getFileDescription()
-                |> basename(...)
-                |> (fn($x) => strstr($x, '.'));
-        if ($extension === false) {
-            return [];
-        }
-
-        if (in_array(ltrim($extension, '.'), $this->templateExtensions, true) === false) {
+        if ($this->templateFileFilter->isTemplateFile($scope) === false) {
             return [];
         }
 
