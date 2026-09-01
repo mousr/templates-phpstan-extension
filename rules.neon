@@ -1,2 +1,0 @@
-rules:
-    - Mousr\TemplatesPhpstanRules\Rules\Escaping\NoUnescapedOutputRule

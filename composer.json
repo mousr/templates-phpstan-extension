@@ -20,7 +20,7 @@
     },
     "extra": {
         "phpstan": {
-            "includes": "rules.neon"
+            "includes": "extension.neon"
         }
     },
     "require-dev": {

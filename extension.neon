@@ -1,0 +1,17 @@
+parametersSchema:
+    mousrTemplates: structure([
+        templateExtensions: listOf(string())
+    ])
+
+parameters:
+    mousrTemplates:
+        templateExtensions:
+            - html.php
+
+services:
+    -
+        class: Mousr\TemplatesPhpstanRules\Rules\Escaping\NoUnescapedOutputRule
+        arguments:
+            templateExtensions: %mousrTemplates.templateExtensions%
+        tags:
+            - phpstan.rules.rule
