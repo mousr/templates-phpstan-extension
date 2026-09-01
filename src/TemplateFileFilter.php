@@ -4,7 +4,7 @@ namespace Mousr\TemplatesPhpstanRules;
 
 use PHPStan\Analyser\Scope;
 
-class TemplateFileFilter {
+final readonly class TemplateFileFilter {
     /** @param list<string> $templateExtensions */
     public function __construct(private array $templateExtensions) {}
 
