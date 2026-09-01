@@ -10,11 +10,11 @@ parameters:
 
 services:
     -
-        class: Mousr\TemplatesPhpstanRules\TemplateFileFilter
+        class: Mousr\TemplatesPhpstanExtension\TemplateFileFilter
         arguments:
             templateExtensions: %mousrTemplates.templateExtensions%
 
     -
-        class: Mousr\TemplatesPhpstanRules\Rules\Escaping\NoUnescapedOutputRule
+        class: Mousr\TemplatesPhpstanExtension\Rules\Escaping\NoUnescapedOutputRule
         tags:
             - phpstan.rules.rule

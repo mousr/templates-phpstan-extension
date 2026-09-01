@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Mousr\TemplatesPhpstanRules\Rules\Escaping;
+namespace Mousr\TemplatesPhpstanExtension\Rules\Escaping;
 
 use Mousr\Templates\Escaper;
-use Mousr\TemplatesPhpstanRules\TemplateFileFilter;
+use Mousr\TemplatesPhpstanExtension\TemplateFileFilter;
 use Override;
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;

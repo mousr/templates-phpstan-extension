@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Mousr\TemplatesPhpstanRules;
+namespace Mousr\TemplatesPhpstanExtension;
 
 use PHPStan\Analyser\Scope;
 
