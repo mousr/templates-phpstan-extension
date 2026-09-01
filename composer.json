@@ -1,0 +1,20 @@
+{
+    "name": "mousr/templates-phpstan-rules",
+    "description": "PHPStan extension to use with mousr/templates",
+    "type": "phpstan-extension",
+    "license": "MIT",
+    "keywords": ["static analysis"],
+    "autoload": {
+        "psr-4": {
+            "Mousr\\TemplatesPhpstanRules\\": "src/"
+        }
+    },
+    "require": {
+        "phpstan/phpstan": "^2.2"
+    },
+    "extra": {
+        "phpstan": {
+            "includes": "rules.neon"
+        }
+    }
+}
