@@ -18,3 +18,8 @@ services:
         class: Mousr\TemplatesPhpstanExtension\Rules\Escaping\NoUnescapedOutputRule
         tags:
             - phpstan.rules.rule
+
+    -
+        class: Mousr\TemplatesPhpstanExtension\Errors\IgnoreMixedTemplateArguments
+        tags:
+            - phpstan.ignoreErrorExtension
